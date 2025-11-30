@@ -1,0 +1,51 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: floating-detection
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/river_detection?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+# MyBatis Plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath:mapper/*.xml
+
+# JWT配置
+jwt:
+  secret: riverFloatingDetectionSecretKey2024ForHS512AlgorithmSecurityRequirement512BitsMinimum
+  expiration: 86400000 # 24小时
+
+# 文件存储路径
+file:
+  upload-path: ./uploads
+  image-path: ./uploads/images
+  video-path: ./uploads/videos
+  result-path: ./uploads/results
+
+# 推理服务配置（默认关闭，便于本地无服务也可运行）
+inference:
+  enabled: true
+  base-url: http://localhost:8000
+  connect-timeout-ms: 5000
+  read-timeout-ms: 300000
+  callback-base: http://localhost:8080
+

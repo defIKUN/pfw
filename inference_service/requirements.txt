@@ -1,0 +1,9 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+opencv-python==4.10.0.84
+numpy==1.26.4
+ultralytics==8.3.7
+requests==2.32.3
+# 注意：请根据环境安装合适的 PyTorch 版本（CPU/GPU）。例如：
+# CPU: pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cpu
+# CUDA 11.8: pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cu118

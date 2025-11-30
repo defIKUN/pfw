@@ -1,0 +1,5 @@
+path: D:\yolov8\xun
+train: images/train
+val: images/val
+nc: 8
+names: ["垃圾","塑料袋","酒瓶","塑料瓶","易拉罐","塑料","塑料盒","船"]
